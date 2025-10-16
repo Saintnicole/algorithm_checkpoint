@@ -1,0 +1,35 @@
+// Instructions
+// The length of the sentence (the number of characters).
+// The number of words in the sentence (assuming that the words are separated by a single space).
+// The number of vowels in the sentence.
+// You have to keep in mind that: 
+
+// Each character will be treated separately.
+// The last character is the point.
+// Use three variables as counters.
+
+ALGORITHM Sentence_Reader
+VAR
+    sentence: STRING;
+    los: INTEGER=0;
+    now: INTEGER=1;
+    nov: INTEGER=0;
+BEGIN
+    read(sentence);
+    WHILE (sentence[los] != ".") DO
+        IF (sentence[los] = " ") THEN
+            now:= now + 1;
+        END_IF
+        
+        IF (sentence[los] = "a" OR sentence[los] = "e" OR sentence[los] = "i" OR sentence[los] = "o" OR sentence[los] = "u") THEN
+            nov:= nov + 1;
+        END_IF
+
+        los:= los + 1;
+    END_WHILE
+
+    los:= los + 1;
+    write("The number of words is ", now);
+    write("The length of the sentence is ", los);
+     
+END
